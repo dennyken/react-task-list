@@ -1,0 +1,17 @@
+@import "src/colors";
+
+.task-input {
+  input {
+    background-color: $cultured;
+    border: 1px solid #ccc;
+    border-right: none;
+  }
+
+  button {
+    cursor: pointer;
+    background-color: $capri;
+    color: $cultured;
+    border: 1px solid $capri;
+    border-left: none;
+  }
+}
