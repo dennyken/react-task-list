@@ -1,8 +1,9 @@
 import TaskBox from '../../components/TaskBox/TaskBox'
+import './Tasks.scss'
 
 const Tasks = () => {
   return (
-    <main>
+    <main className="tasks-layout--main">
       <TaskBox />
     </main>
     
