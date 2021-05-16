@@ -1,7 +1,7 @@
+import Tasks from './views/Tasks/Tasks'
+
 const App = () => {
-  return (
-    <h1>Hello there</h1>
-  )
+  return <Tasks />
 }
 
 export default App
