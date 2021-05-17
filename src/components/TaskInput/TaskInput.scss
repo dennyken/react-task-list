@@ -1,17 +1,37 @@
-@import "src/colors";
+@import 'src/colors';
 
 .task-input {
+  height: 45px;
+  width: 500px;
+  display: flex;
+
   input {
+    height: 100%;
+    width: 100%;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
     background-color: $cultured;
+    padding-left: 20px;
+    padding-right: 20px;
     border: 1px solid #ccc;
     border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   button {
+    height: 100%;
+    width: 120px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
     cursor: pointer;
     background-color: $capri;
     color: $cultured;
     border: 1px solid $capri;
     border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 }
