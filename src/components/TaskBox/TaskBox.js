@@ -7,8 +7,10 @@ const TaskBox = () => {
   return (
     <div className="task-box">
       <BoxHeader />
-      <TaskInput />
-      <TaskList />      
+      <main>
+        <TaskInput />
+        <TaskList />
+      </main>
     </div>
   )
 }
