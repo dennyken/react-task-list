@@ -1,4 +1,7 @@
+@import 'src/colors';
+
 .task-box {
+  background-color: $cultured;
   display: flex;
   flex-direction: column;
   max-width: 500px;
