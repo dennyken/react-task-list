@@ -1,7 +1,7 @@
 @import 'src/colors';
 
 .task-box {
-  background-color: $cultured;
+  background-color: $background-1;
   display: flex;
   flex-direction: column;
   max-width: 500px;
@@ -11,6 +11,6 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
 
   main {
-    padding: 30px 40px 0px 40px;
+    padding: 40px 40px 0px 40px;
   }
 }
