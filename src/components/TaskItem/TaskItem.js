@@ -1,7 +1,9 @@
+import './TaskItem.scss'
+
 const TaskItem = () => {
   return (
-    <li>
-      
+    <li className="task-item">
+      <span>Buy cleaning supplies</span>
     </li>
   )
 }
