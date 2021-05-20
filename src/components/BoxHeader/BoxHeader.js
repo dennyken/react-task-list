@@ -1,9 +1,9 @@
 import './BoxHeader.scss'
 
-const BoxHeader = () => {
+const BoxHeader = ({ title }) => {
   return (
     <header className="box-header">
-      <h2>Tasks</h2>
+      <h2>{title}</h2>
     </header>
   )
 }
