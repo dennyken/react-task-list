@@ -1,9 +1,9 @@
 import './TaskItem.scss'
 
-const TaskItem = () => {
+const TaskItem = ({ description }) => {
   return (
     <li className="task-item">
-      <span>Buy cleaning supplies</span>
+      <span>{description}</span>
     </li>
   )
 }
