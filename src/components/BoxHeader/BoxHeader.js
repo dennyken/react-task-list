@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import './BoxHeader.scss'
 
 const BoxHeader = ({ title }) => {
@@ -8,4 +9,4 @@ const BoxHeader = ({ title }) => {
   )
 }
 
-export default BoxHeader
+export default memo(BoxHeader)
