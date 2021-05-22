@@ -1,41 +1,25 @@
-import { useState } from 'react';
-
 import './TaskInput.scss'
 
-const TaskInput = ({ onSubmit: submit }) => {
-  
-  let [value, setValue] = useState("")
-
-  const onChangeHandler = e => {
-    setValue(e.target.value)
-  }
+const TaskInput = ({ 
+  value,
+  placeholder,
+  onSubmit, 
+  onChange
+}) => {
 
   const onKeyDownHandler = e => {
-    if(e.key === 'Enter') submitValue(value)
+    if(e.key === 'Enter') onSubmit()
   }
-
-  const onClickHandler = () => {
-    submitValue(value)
-  }
-
-  const submitValue = (value) => {
-    if(!(value == null || value.match(/^\s*$/))) {
-      submit(value.trim())
-
-      setValue('')
-    }
-  }
-
 
   return (
     <div className="task-input">
       <input 
-        placeholder="Start adding tasks by typing here" 
-        onChange={onChangeHandler}
-        onKeyDown={onKeyDownHandler}
-        value={value}>
+        value={value}
+        placeholder={placeholder} 
+        onChange={onChange}
+        onKeyDown={onKeyDownHandler}>
       </input>
-      <button onClick={onClickHandler}>Add</button>
+      <button onClick={onSubmit}>Add</button>
     </div>
   )
 }
