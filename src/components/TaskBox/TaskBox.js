@@ -8,18 +8,28 @@ import './TaskBox.scss'
 const TaskBox = () => {
 
   let [tasks, setTasks] = useState([])
+  let [task, setTask] = useState({ title: '' })
 
-  const addTask = (value) => {
-    let newState = [ ...tasks, value ]
+  const addNewTask = () => {
+    if(!(task.title == null || task.title.match(/^\s*$/))) {
+      setTasks([...tasks, task])
+      setTask({ title: '' })
+    }
+  }
 
-    setTasks(newState)
+  const setTaskTitle = e => {
+    setTask({...task, title: e.target.value })
   }
 
   return (
     <div className="task-box">
       <BoxHeader title="My tasks" />
       <main>
-        <TaskInput onSubmit={addTask} />
+        <TaskInput 
+          value={task.title}
+          placeholder="Start by giving your task a title"
+          onSubmit={addNewTask}
+          onChange={setTaskTitle} />
         <TaskList data={tasks} />
       </main>
     </div>
