@@ -1,25 +1,40 @@
+import { useState } from 'react'
 import './TaskInput.scss'
 
 const TaskInput = ({ 
   value,
   placeholder,
-  onSubmit, 
-  onChange
+  onSubmit
 }) => {
+  const [input, setInput] = useState(value || '')
 
-  const onKeyDownHandler = e => {
-    if(e.key === 'Enter') onSubmit()
+  const handleChange = e => {
+    setInput(e.target.value)
+  }
+
+  const handleSubmit = () => {
+    onSubmit(input)
+    setInput('')
+  }
+
+  const handleKeyDown = e => {
+    if(e.key === 'Enter') {
+      onSubmit(input)
+      setInput('')
+    }
   }
 
   return (
     <div className="task-input">
       <input 
-        value={value}
+        type="text"
+        value={input}
         placeholder={placeholder} 
-        onChange={onChange}
-        onKeyDown={onKeyDownHandler}>
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}>
       </input>
-      <button onClick={onSubmit}>Add</button>
+      <button onClick={handleSubmit}>Add</button>
+      {console.log('TaskInput')}
     </div>
   )
 }

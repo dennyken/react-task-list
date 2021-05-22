@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import _ from 'lodash';
 
 import BoxHeader from '../BoxHeader/BoxHeader'
 import TaskInput from '../TaskInput/TaskInput'
@@ -8,17 +9,17 @@ import './TaskBox.scss'
 const TaskBox = () => {
 
   let [tasks, setTasks] = useState([])
-  let [task, setTask] = useState({ title: '' })
 
-  const addNewTask = () => {
-    if(!(task.title == null || task.title.match(/^\s*$/))) {
-      setTasks([...tasks, task])
-      setTask({ title: '' })
+  const addNewTask = input => {
+    if(!(input == null || input.match(/^\s*$/))) {
+      
+      const newTask = {
+        id: _.uniqueId('task-'),
+        title: input
+      }
+
+      setTasks([...tasks, newTask])
     }
-  }
-
-  const setTaskTitle = e => {
-    setTask({...task, title: e.target.value })
   }
 
   return (
@@ -26,10 +27,9 @@ const TaskBox = () => {
       <BoxHeader title="My tasks" />
       <main>
         <TaskInput 
-          value={task.title}
           placeholder="Start by giving your task a title"
-          onSubmit={addNewTask}
-          onChange={setTaskTitle} />
+          onSubmit={addNewTask} 
+        />
         <TaskList data={tasks} />
       </main>
     </div>
