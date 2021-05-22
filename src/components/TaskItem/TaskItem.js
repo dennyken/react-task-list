@@ -5,7 +5,6 @@ const TaskItem = ({ description }) => {
   return (
     <li className="task-item">
       <span>{description}</span>
-      {console.log('TaskItem')}
     </li>
   )
 }

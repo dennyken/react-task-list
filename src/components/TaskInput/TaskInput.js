@@ -34,7 +34,6 @@ const TaskInput = ({
         onKeyDown={handleKeyDown}>
       </input>
       <button onClick={handleSubmit}>Add</button>
-      {console.log('TaskInput')}
     </div>
   )
 }
