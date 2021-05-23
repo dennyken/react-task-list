@@ -10,11 +10,26 @@ const TaskBox = () => {
 
   let [tasks, setTasks] = useState([])
 
+  const toggleStatus = (id) => {
+    const array = [...tasks]
+    const task = array.find(t => t.id === id)
+    const updatedTask = {
+      ...task,
+      isDone: !task.isDone
+    }
+
+    const taskIndex = array.findIndex(t => t.id === id)
+    array[taskIndex] = updatedTask
+
+    setTasks(array)
+  }
+
   const addTask = input => {
     if(!(input == null || input.match(/^\s*$/))) {
       
       const newTask = {
         id: _.uniqueId('task-'),
+        isDone: false,
         title: input
       }
 
@@ -23,7 +38,7 @@ const TaskBox = () => {
   }
 
   const removeTask = (id) => {
-    setTasks(tasks.filter(task => task.id !== id))
+    setTasks(tasks.filter(t => t.id !== id))
   }
 
   return (
@@ -38,6 +53,7 @@ const TaskBox = () => {
         <TaskList 
           data={tasks} 
           onRemoveTask={removeTask}
+          onToggleStatus={toggleStatus}
         />
       </main>
     </div>
