@@ -26,11 +26,11 @@
 
   .done {
     opacity: 1;
-    color: $green-1;
+    color: $primary-1;
   }
 
   .done:hover {
-    color: lighten($green-1, 10%);
+    color: lighten($primary-1, 10%);
   }
 
   .task-description {
