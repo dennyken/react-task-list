@@ -19,7 +19,7 @@ const TaskItem = ({
   }
   
   return (
-    <li className="task-item">
+    <li className={`task-item ${isDone && 'done'}`}>
       <div 
         className={`task-status ${isDone && 'done'}`}
         onClick={handleToggleStatus}
