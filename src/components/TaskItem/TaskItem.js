@@ -1,14 +1,18 @@
 import { memo } from 'react'
 import './TaskItem.scss'
+import { MdClose } from 'react-icons/md'
 
 const TaskItem = ({ id, description, onRemoveTask }) => {
-  const handleClick = () => {
+  const handleRemoveTask = () => {
     onRemoveTask(id)
   }
   
   return (
-    <li className="task-item" onClick={handleClick} value={id}>
+    <li className="task-item" value={id}>
       <span>{description}</span>
+      <div className="remove-icon" onClick={handleRemoveTask}>
+        <MdClose size={'100%'} />
+      </div>
     </li>
   )
 }

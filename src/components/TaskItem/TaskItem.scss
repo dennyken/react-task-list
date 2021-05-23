@@ -5,10 +5,27 @@
   width: 100%;
   height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 3px;
   margin-bottom: 3px;
+  padding: 0px 15px;
+
+  span {
+    overflow: hidden;
+  }
+
+  .remove-icon {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    color: $gray-1;
+  }
+
+  .remove-icon:hover {
+    transform: scale(1.1);
+    color: darken($gray-1, 30%);
+  }
 }
 
 .task-item:last-child {
