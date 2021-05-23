@@ -11,10 +11,17 @@
   margin-bottom: 3px;
   padding: 0px 15px;
 
-  span {
+  .task-description {
+    width: 90%;
+    white-space: nowrap;
     overflow: hidden;
-  }
+    text-overflow: ellipsis;
 
+    span {
+      width: 100%;
+    }
+  }
+  
   .remove-icon {
     cursor: pointer;
     width: 20px;

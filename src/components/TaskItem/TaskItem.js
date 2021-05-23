@@ -9,7 +9,9 @@ const TaskItem = ({ id, description, onRemoveTask }) => {
   
   return (
     <li className="task-item" value={id}>
-      <span>{description}</span>
+      <div className="task-description">
+        <span title={description}>{description}</span>
+      </div>
       <div className="remove-icon" onClick={handleRemoveTask}>
         <MdClose size={'100%'} />
       </div>
