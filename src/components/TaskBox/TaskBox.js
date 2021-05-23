@@ -10,7 +10,7 @@ const TaskBox = () => {
 
   let [tasks, setTasks] = useState([])
 
-  const addNewTask = input => {
+  const addTask = input => {
     if(!(input == null || input.match(/^\s*$/))) {
       
       const newTask = {
@@ -22,15 +22,23 @@ const TaskBox = () => {
     }
   }
 
+  const removeTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id))
+  }
+
   return (
     <div className="task-box">
       <BoxHeader title="My tasks" />
       <main>
         <TaskInput 
           placeholder="Start by giving your task a title"
-          onSubmit={addNewTask} 
+          onSubmit={addTask}
+          autoClear 
         />
-        <TaskList data={tasks} />
+        <TaskList 
+          data={tasks} 
+          onRemoveTask={removeTask}
+        />
       </main>
     </div>
   )

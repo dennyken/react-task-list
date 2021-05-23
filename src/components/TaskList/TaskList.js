@@ -2,10 +2,16 @@ import './TaskList.scss'
 
 import TaskItem from '../TaskItem/TaskItem'
 
-const TaskList = ({ data }) => {
+const TaskList = ({ data, onRemoveTask }) => {
   return (
     <ol className="task-list">
-      { data.map((value) => <TaskItem key={value.id} description={value.title} /> )}
+      { data.map((value) => (
+        <TaskItem 
+          key={value.id}
+          id={value.id}
+          description={value.title}
+          onRemoveTask={onRemoveTask} /> 
+      ))}
     </ol>
   )
 }

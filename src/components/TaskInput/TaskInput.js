@@ -4,7 +4,8 @@ import './TaskInput.scss'
 const TaskInput = ({ 
   value,
   placeholder,
-  onSubmit
+  onSubmit,
+  autoClear
 }) => {
   const [input, setInput] = useState(value || '')
 
@@ -14,13 +15,13 @@ const TaskInput = ({
 
   const handleSubmit = () => {
     onSubmit(input)
-    setInput('')
+    if (autoClear) setInput('')
   }
 
   const handleKeyDown = e => {
     if(e.key === 'Enter') {
       onSubmit(input)
-      setInput('')
+      if (autoClear) setInput('')
     }
   }
 
