@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import './TaskItem.scss'
-import { MdClose, MdCheckCircle } from 'react-icons/md'
+import { MdClose, MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md'
 
 const TaskItem = ({ 
   id, 
@@ -19,12 +19,16 @@ const TaskItem = ({
   }
   
   return (
-    <li className={`task-item ${isDone && 'done'}`}>
+    <li className={`task-item${isDone ? ' done' : ''}`}>
       <div 
-        className={`task-status ${isDone && 'done'}`}
+        className={`task-status${isDone ? ' done' : ''}`}
         onClick={handleToggleStatus}
       >
-        <MdCheckCircle size={'100%'} />
+        {
+          isDone ? <MdCheckBox size={'100%'} />
+            : <MdCheckBoxOutlineBlank size={'100%'} />
+        }
+        
       </div>
       <div className="task-description">
         <span title={description}>{description}</span>
