@@ -19,22 +19,22 @@ const TaskItem = ({
   const handleToggleStatus = () => {
     onToggleStatus(id)
   }
-
-  const handleMouseEnter = e => {
-    e.bubbles = false
-    setIsHovered(true)
-  }
   
   const handleMouseLeave = e => {
     e.bubbles = false
     setIsHovered(false)
   }
 
+  const handleMouseOver = e => {
+    e.bubbles = false
+    setIsHovered(true)
+  }
+
   return (
     <li 
       className={`task-item${isDone ? ' done' : ''}`} 
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
+      onMouseLeave={handleMouseLeave}
+      onMouseOver={handleMouseOver}>
       <div 
         className={`task-status${isDone ? ' done' : ''}`}
         onClick={handleToggleStatus}>
