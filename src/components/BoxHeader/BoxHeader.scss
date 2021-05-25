@@ -6,27 +6,31 @@
   align-items: center;
   border-bottom: 1px solid #ccc;
 
-  &:hover {
+  .header-content {
+    position: relative;
+    cursor: pointer;
+    display: inline;
+    width: auto;
+    height: auto;
+
     h2 {
-      cursor: pointer;
-      margin-left: 30px;
+      font-size: 20px;
+      display: inline-block;
     }
-    div {
-      cursor: pointer;
-      display: inline;
-      opacity: 0.5;
+
+    .edit-icon {
+      width: 20px;
+      height: 20px;
+      display: none;
     }
-  }
 
-  h2 {
-    font-size: 20px;
-  }
-
-  div {
-    width: 20px;
-    height: 20px;
-    display: none;
-    margin-left: 10px;
-    transform: translateY(-2px)
+    &:hover {
+      .edit-icon {
+        position: absolute;
+        display: inline-block;
+        opacity: 0.5;
+        transform: translate(5px, 3px);
+      }
+    }
   }
 }
