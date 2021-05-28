@@ -1,0 +1,3 @@
+@use "./colors" as *;
+
+$background: color($palette, "light-gray", "base");
