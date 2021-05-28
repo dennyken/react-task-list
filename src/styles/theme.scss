@@ -1,3 +1,12 @@
 @use "./colors" as *;
 
-$background: color($palette, "light-gray", "base");
+$white: color("white", "base");
+$white-dark: color("white", "dark");
+
+$primary: color("light-blue", "base");
+$primary-light: color("light-blue", "light");
+$primary-dark: color("light-blue", "dark");
+
+$background: color("light-gray", "base");
+$background-light: color("light-gray", "light");
+$background-dark: color("light-gray", "dark");

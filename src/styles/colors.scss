@@ -1,6 +1,10 @@
 @use "sass:map";
 
 $palette: (
+  "white": (
+    "base": #FCFCFC,
+    "dark": #FAFAFA,
+  ),  
   "light-blue": (
     "base": #0ABAFF,
     "light": #5CD1FF,
@@ -18,7 +22,8 @@ $palette: (
   )
 );
 
-@function color($map, $keys...) {
+@function color($keys...) {
+  $map: $palette;
   @each $key in $keys {
       $map: map-get($map, $key);
   }
