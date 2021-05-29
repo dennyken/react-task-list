@@ -1,4 +1,4 @@
-@import 'src/colors';
+@use "src/styles/theme";
 
 .task-input {
   height: 45px;
@@ -11,23 +11,23 @@
     font-family: inherit;
     font-size: 18px;
     font-weight: 400;
-    background-color: $background-1;
+    background-color: theme.$background-light;
     padding-left: 20px;
     padding-right: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid theme.$background-dark;
     border-right: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     transition: background-color 0.2s, border 0.2s;
 
     &:hover {
-      background-color: $background-2;
+      background-color: theme.$white-dark;
       transition: 0.2s;
     }
 
     &:focus {
-      background-color: $background-1;
-      border: 1px solid $primary-1;
+      background-color: theme.$white-dark;
+      border: 1px solid theme.$primary;
       border-right: none;
     }
 
@@ -48,24 +48,24 @@
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    background-color: $primary-1;
-    color: $background-1;
-    border: 1px solid $primary-1;
+    background-color: theme.$primary;
+    color: theme.$white;
+    border: 1px solid theme.$primary;
     border-left: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     transition: background-color 0.2s, border 0.2s;
 
     &:hover {
-      background-color: lighten($primary-1, 10%);
-      border: 1px solid lighten ($primary-1, 10%);
+      background-color: theme.$primary-light;
+      border: 1px solid theme.$primary-light;
       border-left: none;
       transition: all 0.2s;
     }
 
     &:active {
-      background-color: darken($primary-1, 10%);
-      border: 1px solid darken($primary-1, 10%);
+      background-color: theme.$primary-dark;
+      border: 1px solid theme.$primary-dark;
       border-left: none;
     }
   }
