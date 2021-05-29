@@ -1,4 +1,4 @@
-@import 'src/colors';
+@use "src/styles/theme";
 
 .task-item {
   position: relative;
@@ -22,27 +22,27 @@
 
   &:hover {
     opacity: 1;
-    background-color: $background-2;
+    background-color: theme.$background-light;
   }
 
   .task-status {
     cursor: pointer;
     width: 20px;
     height: 20px;
-    color: $gray-1;
+    color: theme.$gray;
 
     &:hover {
       transform: scale(1.2);
-      color: darken($gray-1, 30%);
+      color: theme.$gray;
     }
   }
 
   .done {
     opacity: 1;
-    color: $primary-1;
+    color: theme.$primary;
 
     &:hover {
-      color: lighten($primary-1, 10%);
+      color: theme.$primary;
     }
   }
 
@@ -64,11 +64,11 @@
     cursor: pointer;
     width: 20px;
     height: 20px;
-    color: $gray-1;
+    color: theme.$gray;
 
     &:hover {
       transform: scale(1.2);
-      color: darken($gray-1, 30%);
+      color: theme.$gray-dark;
     }
   }
 }

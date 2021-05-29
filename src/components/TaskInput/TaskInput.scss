@@ -11,7 +11,7 @@
     font-family: inherit;
     font-size: 18px;
     font-weight: 400;
-    background-color: theme.$background-light;
+    background-color: theme.$white-dark;
     padding-left: 20px;
     padding-right: 20px;
     border: 1px solid theme.$background-dark;
@@ -21,7 +21,7 @@
     transition: background-color 0.2s, border 0.2s;
 
     &:hover {
-      background-color: theme.$white-dark;
+      background-color: theme.$white;
       transition: 0.2s;
     }
 

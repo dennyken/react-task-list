@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap');
-@import 'src/colors';
+@use "src/styles/theme";
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap");
+
 
 * { 
   margin: 0;
@@ -13,8 +14,8 @@ html, body, #root {
 }
 
 body {
-  background-color: $background-2;
-  color: #141414;
+  background-color: theme.$background-light;
+  color: theme.$black-light;
   font-size: 16px;
   font-family: 'Heebo', sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,7 +1,7 @@
-@import 'src/colors';
+@use "src/styles/theme";
 
 .task-box {
-  background-color: $background-1;
+  background-color: theme.$white-dark;
   display: flex;
   flex-direction: column;
   max-width: 450px;
