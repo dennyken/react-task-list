@@ -3,7 +3,7 @@
 $palette: (
   "white": (
     "base": #FCFCFC,
-    "dark": #FAFAFA,
+    "dark": #F6F6F6,
   ),  
   "light-blue": (
     "base": #0ABAFF,
@@ -12,12 +12,16 @@ $palette: (
   ),
   "light-gray": (
     "base": #E0E0E0,
-    "light": #F5F5F5,
+    "light": #EBEBEB,
     "dark": #CCCCCC
+  ),
+  "gray": (
+    "base": #8F8F8F,
+    "dark": #707070
   ),
   "black": (
     "base": #1F1F1F,
-    "light": #292929,  
+    "light": #2C2C2C,  
     "dark": #141414
   )
 );
