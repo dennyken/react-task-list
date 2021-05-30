@@ -1,4 +1,4 @@
-import TaskBox from '../../components/TaskBox/TaskBox'
+import TaskBox from '../../components/TaskBox'
 import './Tasks.scss'
 
 const Tasks = () => {

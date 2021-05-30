@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import _ from 'lodash';
 
 import BoxHeader from '../BoxHeader/BoxHeader'
 import TaskInput from '../TaskInput/TaskInput'
 import TaskList from '../TaskList/TaskList'
+import TaskItem from '../TaskItem/TaskItem'
 import './TaskBox.scss'
 
 const TaskBox = () => {
 
   let [tasks, setTasks] = useState([])
 
-  const toggleStatus = (id) => {
+  const toggleStatus = id => {
     const array = [...tasks]
     const task = array.find(t => t.id === id)
     const updatedTask = {
@@ -25,8 +26,8 @@ const TaskBox = () => {
   }
 
   const addTask = input => {
-    if(!(input == null || input.match(/^\s*$/))) {
-      
+    if (!(input == null || input.match(/^\s*$/))) {
+
       const newTask = {
         id: _.uniqueId('task-'),
         isDone: false,
@@ -37,7 +38,7 @@ const TaskBox = () => {
     }
   }
 
-  const removeTask = (id) => {
+  const removeTask = id => {
     setTasks(tasks.filter(t => t.id !== id))
   }
 
@@ -45,16 +46,21 @@ const TaskBox = () => {
     <div className="task-box">
       <BoxHeader title="My tasks" />
       <main>
-        <TaskInput 
+        <TaskInput
           placeholder="Start by giving your task a title"
           onSubmit={addTask}
-          autoClear 
-        />
-        <TaskList 
-          data={tasks} 
-          onRemoveTask={removeTask}
-          onToggleStatus={toggleStatus}
-        />
+          autoClear />
+        <TaskList>
+          { tasks.map(t => (
+            <TaskItem 
+              key={t.id}
+              id={t.id}
+              isDone={t.isDone}
+              description={t.title}
+              onRemoveTask={removeTask}
+              onToggleStatus={toggleStatus} />
+          ))}
+        </TaskList>
       </main>
     </div>
   )
