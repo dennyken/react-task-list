@@ -47,7 +47,7 @@ const TaskBox = () => {
       <BoxHeader title="My tasks" />
       <main>
         <TaskInput
-          placeholder="Start by giving your task a title"
+          placeholder="What do you have to do?"
           onSubmit={addTask}
           autoClear />
         <TaskList>
