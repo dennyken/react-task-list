@@ -1,8 +1,8 @@
+import './Backdrop.scss'
+
 const Backdrop = () => {
   return (
-    <div className="backdrop">
-      
-    </div>
+    <div className="backdrop"></div>
   )
 }
 
