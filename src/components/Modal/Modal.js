@@ -1,12 +1,12 @@
 import Backdrop from '../Backdrop'
 import './Modal.scss'
 
-const Modal = () => {
+const Modal = ({children, onBackdropClick}) => {
   return (
-    <div className="modal">
-      <Backdrop />
-      <div>
-        
+    <div className="overlay">
+      <Backdrop onBackdropClick={onBackdropClick} />
+      <div className="modal">
+        {children}
       </div>
     </div>
   )
