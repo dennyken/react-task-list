@@ -2,16 +2,13 @@ import { memo } from 'react'
 import './BoxHeader.scss'
 import { MdEdit } from 'react-icons/md'
 
-const BoxHeader = ({ title }) => {
-  const handleHeaderClick = () => {
-    console.log('BoxHeader:onClick')
-  }
+const BoxHeader = ({ title, onHeaderClick }) => {
 
   return (
     <header className="box-header">
       <div 
         className="header-content"
-        onClick={handleHeaderClick}>
+        onClick={onHeaderClick}>
         <h2>{title}</h2>
         <div className="edit-icon">
           <MdEdit size={'100%'} />
