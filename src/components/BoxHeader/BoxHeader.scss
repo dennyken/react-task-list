@@ -21,17 +21,17 @@
     }
 
     .edit-icon {
+      display: inline-block;
       width: 20px;
       height: 20px;
-      display: none;
+      margin-right: -20px;
+      transform: translate(5px, 3px);
+      opacity: 0;
     }
 
     &:hover {
       .edit-icon {
-        display: inline-block;
         opacity: 0.5;
-        margin-right: -20px;
-        transform: translate(5px, 3px);
       }
     }
   }
