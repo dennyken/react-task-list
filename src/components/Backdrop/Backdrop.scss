@@ -1,9 +1,9 @@
 .backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #000;
-  opacity: .3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  box-shadow: inset 0 0 30em rgba(0, 0, 0, .3);
 }
