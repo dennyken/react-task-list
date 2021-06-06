@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import _ from 'lodash';
 
 import BoxHeader from '../BoxHeader/BoxHeader'
-import TaskInput from '../TaskInput/TaskInput'
+import Input from '../Input'
 import TaskList from '../TaskList/TaskList'
 import TaskItem from '../TaskItem/TaskItem'
 import './TaskBox.scss'
@@ -12,6 +12,7 @@ import Modal from '../Modal';
 const TaskBox = () => {
   const dispatch = useDispatch()
   let [tasks, setTasks] = useState([])
+  let [title, setTitle] = useState('My tasks')
   let [displayModal, setDisplayModal] = useState(false)
 
   const toggleStatus = id => {
@@ -45,20 +46,32 @@ const TaskBox = () => {
     setTasks(tasks.filter(t => t.id !== id))
   }
 
+  const changeTitle = input => {
+    if (!(input == null || input.match(/^\s*$/))) {
+      setTitle(input)
+    }
+
+    setDisplayModal(false)
+  }
+
   return (
     <div className="task-box">
       { displayModal && 
         <Modal onBackdropClick={() => setDisplayModal(false)}>
-          Hello there!
+          <Input
+            placeholder="New title" 
+            onSubmit={changeTitle}
+            buttonText="Change" />
         </Modal>
       }
       <BoxHeader 
-        title="My tasks"
+        title={title}
         onHeaderClick={() => setDisplayModal(true)} />
       <main>
-        <TaskInput
+        <Input
           placeholder="What do you have to do?"
           onSubmit={addTask}
+          buttonText="Add"
           autoClear />
         <TaskList>
           { tasks.map(t => (

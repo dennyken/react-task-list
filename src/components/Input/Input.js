@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import './TaskInput.scss'
+import './Input.scss'
 
-const TaskInput = ({ 
+const Input = ({ 
   value,
   placeholder,
   onSubmit,
+  buttonText,
   autoClear
 }) => {
   const [input, setInput] = useState(value || '')
@@ -26,7 +27,7 @@ const TaskInput = ({
   }
 
   return (
-    <div className="task-input">
+    <div className="input">
       <input 
         type="text"
         value={input}
@@ -34,9 +35,9 @@ const TaskInput = ({
         onChange={handleChange}
         onKeyDown={handleKeyDown}>
       </input>
-      <button onClick={handleSubmit}>Add</button>
+      <button onClick={handleSubmit}>{buttonText}</button>
     </div>
   )
 }
 
-export default TaskInput
+export default Input
