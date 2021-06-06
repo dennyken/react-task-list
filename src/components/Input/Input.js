@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Input.scss'
 
 const Input = ({ 
@@ -6,9 +6,16 @@ const Input = ({
   placeholder,
   onSubmit,
   buttonText,
-  autoClear
+  autoClear,
+  focused
 }) => {
   const [input, setInput] = useState(value || '')
+
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    focused ? inputRef.current.focus() : null
+  }, [])
 
   const handleChange = e => {
     setInput(e.target.value)
@@ -29,6 +36,7 @@ const Input = ({
   return (
     <div className="input">
       <input 
+        ref={inputRef}
         type="text"
         value={input}
         placeholder={placeholder} 

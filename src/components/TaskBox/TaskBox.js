@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import _ from 'lodash';
 
-import BoxHeader from '../BoxHeader/BoxHeader'
+import BoxHeader from '../BoxHeader'
 import Input from '../Input'
 import TaskList from '../TaskList/TaskList'
 import TaskItem from '../TaskItem/TaskItem'
@@ -58,15 +58,21 @@ const TaskBox = () => {
     <div className="task-box">
       { displayModal && 
         <Modal onBackdropClick={() => setDisplayModal(false)}>
+          <BoxHeader>
+            Change title
+          </BoxHeader>
           <Input
             placeholder="New title" 
             onSubmit={changeTitle}
-            buttonText="Change" />
+            buttonText="Change"
+            focused />
         </Modal>
       }
       <BoxHeader 
-        title={title}
-        onHeaderClick={() => setDisplayModal(true)} />
+        onHeaderClick={() => setDisplayModal(true)}
+        editable >
+          {title}
+      </BoxHeader>
       <main>
         <Input
           placeholder="What do you have to do?"

@@ -10,7 +10,6 @@
 
   .header-content {
     white-space: nowrap;
-    cursor: pointer;
     display: inline;
     width: auto;
     height: auto;
@@ -33,6 +32,10 @@
       .edit-icon {
         opacity: 0.5;
       }
+    }
+
+    &.editable {
+      cursor: pointer;
     }
   }
 }
