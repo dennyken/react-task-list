@@ -49,9 +49,8 @@ const TaskBox = () => {
   const changeTitle = input => {
     if (!(input == null || input.match(/^\s*$/))) {
       setTitle(input)
+      setDisplayModal(false)
     }
-
-    setDisplayModal(false)
   }
 
   return (
