@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './Input.scss'
 
 const Input = ({ 
+  className,
   value,
   placeholder,
   onSubmit,
@@ -34,7 +35,7 @@ const Input = ({
   }
 
   return (
-    <div className="input">
+    <div className={`input ${className ? className : ''}`}>
       <input 
         ref={inputRef}
         type="text"

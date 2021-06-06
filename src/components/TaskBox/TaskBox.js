@@ -61,6 +61,7 @@ const TaskBox = () => {
             Change title
           </BoxHeader>
           <Input
+            className="input-title"
             placeholder="New title" 
             onSubmit={changeTitle}
             buttonText="Change"
