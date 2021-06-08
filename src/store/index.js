@@ -1,29 +1,31 @@
 import { createStore } from 'redux'
 
-export const addTask = () => {
-  return {
-    type: 'ADD_TASK'
+const initialState = {
+  taskLists: [{
+    id: 0,
+    title: 'Redux starter',
+    tasks: [
+      {
+        id: 0,
+        title: 'First task',
+        isDone: true
+      }
+    ]
+  }]
+}
+
+const taskListReducer = (state = initialState, action) => {
+  switch(action.type) {
+    case 'ADD_TASK_LIST':
+      return [...state, action.payload]
+    default:
+      return state
   }
 }
 
-export const removeTask = () => {
-  return {
-    type: 'REMOVE_TASK'
-  }
-}
 
-const taskList = (state = [], action) => {
-  switch (action.type) {
-    case 'ADD_TASK':
-      return [...state, 'tsk']
-    case 'REMOVE_TASK':
-      return [...state, 'ntsk']
-  }
-}
+const store = createStore(taskListReducer)
 
-const store = createStore(taskList)
-
-store.subscribe(() => console.log('action dispatched!', store.getState()))
+store.subscribe(() => console.log(store.getState()))
 
 export { store }
-

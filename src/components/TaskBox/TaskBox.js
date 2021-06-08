@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import _ from 'lodash';
 
 import BoxHeader from '../BoxHeader'
@@ -11,9 +11,10 @@ import Modal from '../Modal';
 
 const TaskBox = () => {
   const dispatch = useDispatch()
-  let [tasks, setTasks] = useState([])
-  let [title, setTitle] = useState('My tasks')
   let [displayModal, setDisplayModal] = useState(false)
+  let taskList = useSelector(state => state.taskLists[0])
+  let { tasks } = taskList
+  
 
   const toggleStatus = id => {
     const array = [...tasks]
@@ -71,7 +72,7 @@ const TaskBox = () => {
       <BoxHeader 
         onHeaderClick={() => setDisplayModal(true)}
         editable >
-          {title}
+          {taskList.title}
       </BoxHeader>
       <main>
         <Input
